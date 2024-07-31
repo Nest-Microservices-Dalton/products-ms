@@ -77,6 +77,13 @@ export class ProductsService extends PrismaClient implements OnModuleInit {
         available : false
       }
     });
+
+    if (product) {
+      throw new RpcException({
+        message : 'Product delete',
+        status :  HttpStatus.OK
+      });
+    }
     // return this.product.delete({ where: { id } });  //elimina completamente
   }
 
